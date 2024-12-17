@@ -19,10 +19,12 @@ public class Calculadora {
             System.out.println("7. Tangente");
             System.out.println("8. Fatorial");
             System.out.println("9. Histórico");
-            System.out.println("10. Sair");
+            System.out.println("10. Historico Ultima Operação");
+            System.out.println("11. Limpar historico");
+            System.out.println("12. Sair");
             int escolha = scanner.nextInt();
 
-            if (escolha == 10) {
+            if (escolha == 12) {
                 System.out.println("Fechando calculadora");
                 break;
             }
@@ -91,6 +93,16 @@ public class Calculadora {
                     System.out.println("Histórico de operações:");
                     opBasicas.getHistorico().imprimirOperacoes();
                     funcoesMat.getHistorico().imprimirOperacoes();
+                    break;
+                case 10:
+                    System.out.println("Ultima operação");
+                    opBasicas.getHistorico().ultimaHistorico();
+                    funcoesMat.getHistorico().ultimaHistorico();
+                    break;
+                case 11:
+                    System.out.println("Limpando historico");
+                    funcoesMat.getHistorico().limparHistorico();
+                    opBasicas.getHistorico().limparHistorico();
                     break;
                 default:
                     System.out.println("Opção inválida.");
